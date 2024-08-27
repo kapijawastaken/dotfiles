@@ -16,6 +16,6 @@ set fish_color_cwd red
 set fish_color_user red
 function fish_greeting
     set_color red
-    echo "Welcome, Ri!"
+    echo "Welcome!"
 end
 pfetch
