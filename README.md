@@ -1,2 +1,2 @@
 # dotfiles
-My dotfiles, and an rpm package to install them
+My dotfiles, and an installer to install them
