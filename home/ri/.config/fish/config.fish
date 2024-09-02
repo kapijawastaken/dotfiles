@@ -3,8 +3,8 @@ if status is-interactive
 end
 # Set up fzf key bindings
 fzf --fish | source
-alias m="sudo micro"
-alias fishconf="sudo micro ~/.config/fish/config.fish"
+alias m="micro"
+alias fishconf="micro ~/.config/fish/config.fish"
 fish_add_path -P ~/.cargo/bin
 set PF_INFO "ascii title os cpu de pkgs uptime"
 export PF_INFO
