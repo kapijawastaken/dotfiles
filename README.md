@@ -6,3 +6,4 @@ Requirements:
 - i3blocks
 - fish shell
 - btop
+- picom-git
