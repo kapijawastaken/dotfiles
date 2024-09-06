@@ -13,10 +13,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # networkmanager
 exec --no-startup-id nm-applet
 
-# volume key setup for alsa
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+# volume key setup
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_mute
 
 # mouse window mover thingy
 floating_modifier $mod
@@ -94,7 +94,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # i3bar
 bar {
-        status_command i3status
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        colors {
+        	background $black
+        }
 }
 
 # inner gaps
@@ -114,7 +117,7 @@ title_align center
 exec_always --no-startup-id  ~/.fehbg &
 
 # compositor
-exec --no-startup-id picom -b
+exec_always --no-startup-id picom --config  ~/.config/picom.conf
 
 # colour vars
 set $red #ff0000
@@ -125,3 +128,18 @@ set $black #000000
 client.focused $red $red $white $white $red
 client.focused_inactive $grey $grey $black $white $grey
 client.unfocused $grey $grey $black $white $grey
+
+# polkit
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# dunst
+exec --no-startup-id /usr/bin/dunst
+
+# blueberry applet
+exec --no-startup-id blueberry-tray
+
+# networkmanager applet
+exec --no-startup-id nm-applet
+
+# clipman applet
+exec --no-startup-id xfce4-clipman
