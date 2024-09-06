@@ -115,3 +115,13 @@ exec_always --no-startup-id  ~/.fehbg &
 
 # compositor
 exec --no-startup-id picom -b
+
+# colour vars
+set $red #ff0000
+set $white #ffffff
+set $grey #808080
+set $black #000000
+# colours (border bg text indicator child_border)
+client.focused $red $red $white $white $red
+client.focused_inactive $grey $grey $black $white $grey
+client.unfocused $grey $grey $black $white $grey
