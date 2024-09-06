@@ -6,6 +6,7 @@ fzf --fish | source
 alias m="micro"
 alias fishconf="micro ~/.config/fish/config.fish"
 alias i3conf="micro ~/.config/i3/config"
+alias sm="sudo micro"
 fish_add_path -P ~/.cargo/bin
 set PF_INFO "ascii title os cpu de pkgs uptime"
 export PF_INFO
