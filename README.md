@@ -1,3 +1,8 @@
 # dotfiles
-My dotfiles, and an installer to install them
-(make sure to "sudo chmod +x" the installer.sh and install the roboto mono nerd font)
+Requirements:
+- `chmod +x installer.sh`
+- kitty
+- i3
+- i3blocks
+- fish shell
+- btop
