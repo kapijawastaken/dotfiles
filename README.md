@@ -10,3 +10,5 @@ Requirements:
 - brightnessctl
 - pavucontrol
 - rofi
+- nm-applet
+- xfce4-clipman
