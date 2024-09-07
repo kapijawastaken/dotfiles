@@ -1,5 +1,4 @@
 configuration {
     font: "Roboto Mono Medium 14";
 }
-//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
-@theme "/home/ri/.local/share/rofi/themes/rounded-red-dark.rasi"
+@theme "~/.local/share/rofi/themes/rounded-red-dark.rasi"
