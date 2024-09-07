@@ -12,3 +12,4 @@ Requirements:
 - rofi
 - nm-applet
 - xfce4-clipman
+- perl
