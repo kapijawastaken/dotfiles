@@ -1,1 +1,4 @@
-(placehodler)
+configuration {
+    font: "Roboto Mono Medium 14";
+}
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
