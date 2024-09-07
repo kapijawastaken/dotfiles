@@ -25,7 +25,7 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id kitty
 
 # kill shortcut
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # rofi shortcut
 bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -116,7 +116,7 @@ title_align center
 exec_always --no-startup-id  ~/.fehbg &
 
 # compositor
-exec_always --no-startup-id picom --config  ~/.config/picom.conf
+exec   --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # colour vars
 set $red #ff0000
@@ -139,3 +139,7 @@ exec --no-startup-id nm-applet
 
 # clipman applet
 exec --no-startup-id xfce4-clipman
+
+# border 
+default_border pixel 5
+default_floating_border pixel 5
