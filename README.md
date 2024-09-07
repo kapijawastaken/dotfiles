@@ -7,3 +7,6 @@ Requirements:
 - fish shell
 - btop
 - picom-git
+- brightnessctl
+- systemctl
+- pavucontrol
