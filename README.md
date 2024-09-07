@@ -10,3 +10,4 @@ Requirements:
 - brightnessctl
 - systemctl
 - pavucontrol
+- rofi
