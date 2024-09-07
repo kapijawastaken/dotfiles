@@ -8,6 +8,5 @@ Requirements:
 - btop
 - picom-git
 - brightnessctl
-- systemctl
 - pavucontrol
 - rofi
