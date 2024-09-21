@@ -143,3 +143,9 @@ default_floating_border pixel 5
 
 # hp systray
 exec --no-startup-id hp-systray
+
+# screen recorder
+exec --no-startup-id simplescreenrecorder --start-hidden
+
+# explorer shortcut
+bindsym $mod+e exec --no-startup-id thunar
