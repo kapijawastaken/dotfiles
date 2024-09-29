@@ -2,14 +2,15 @@
 Requirements:
 - `chmod +x installer.sh`
 - kitty
-- i3
-- i3blocks
+- bspwm
+- polybar
+- sxkhd
 - fish shell
 - btop
 - picom-git
-- brightnessctl
 - pavucontrol
 - rofi
 - nm-applet
 - xfce4-clipman
-- perl
+- xfce4-screenshooter
+- simplescreenrecorder
