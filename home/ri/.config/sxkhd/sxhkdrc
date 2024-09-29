@@ -1,0 +1,76 @@
+# kitty
+super + Return
+	kitty
+
+# rofi
+super + d
+	rofi -modi drun,run -show drun
+# logout 
+super + shift + e
+	pkill -KILL -u $USER
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# bspwm hotkeys
+super + Up
+	bspc node @/ -p north -r 0.5
+super + Down
+	bspc node @/ -p south -r 0.5
+super + Left
+	bspc node @/ -p west -r 0.5
+super + Right
+	bspc node @/ -p east -r 0.5
+super + shift + Up
+	bspc node -s north
+super + shift + Down
+	bspc node -s south
+super + shift + Left
+	bspc node -s west
+super + shift + Right
+	bspc node -s east
+
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# set the window state
+super + {f,t}
+	bspc node -t {fullscreen,tiled}
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# cancel the preselection for the focused node
+super + space
+	bspc node -p cancel
+
+# volume up
+XF86AudioRaiseVolume
+	amixer -q set Master 5%+ unmute
+
+# volume down
+XF86AudioLowerVolume
+	amixer -q set Master 5%- unmute
+
+# mute
+XF86AudioMute
+	amixer -D pulse sset Master toggle-mute
+  
+# brightness up
+XF86MonBrightnessUp
+	xbacklight -inc 5
+
+# brightness down
+XF86MonBrightnessDown
+	xbacklight -dec 5
+
+# screenshot
+Print
+	xfce4-screenshooter
+
+# thunar
+super + e
+	thunar 
