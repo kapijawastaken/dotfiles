@@ -1,13 +1,11 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-# Set up fzf key bindings
 fzf --fish | source
-alias m="micro"
-alias fishconf="micro ~/.config/fish/config.fish"
-alias i3conf="micro ~/.config/i3/config"
-alias sm="sudo micro"
+alias n="nvim"
+alias fishconf="nvim ~/.config/fish/config.fish"
+alias sn="sudoedit"
 fish_add_path -P ~/.cargo/bin
+set SUDO_EDITOR /usr/bin/nvim
+export SUDO_EDITOR
 set PF_INFO "ascii title os cpu de pkgs uptime"
 export PF_INFO
 set PF_COL1 1
@@ -21,3 +19,4 @@ function fish_greeting
     echo "Welcome!"
 end
 pfetch
+end
