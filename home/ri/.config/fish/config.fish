@@ -1,10 +1,11 @@
 if status is-interactive
 fzf --fish | source
-alias n="nvim"
-alias fishconf="nvim ~/.config/fish/config.fish"
-alias sn="sudoedit"
+alias v="vim"
+alias fishconf="vim ~/.config/fish/config.fish"
+alias sv="sudoedit"
+alias :q="exit"
 fish_add_path -P ~/.cargo/bin
-set SUDO_EDITOR /usr/bin/nvim
+set SUDO_EDITOR /usr/bin/vim
 export SUDO_EDITOR
 set PF_INFO "ascii title os cpu de pkgs uptime"
 export PF_INFO
