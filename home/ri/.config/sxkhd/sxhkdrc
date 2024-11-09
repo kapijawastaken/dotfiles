@@ -15,13 +15,13 @@ super + Escape
 
 # bspwm hotkeys
 super + Up
-	bspc node @/ -p north -r 0.5
+	bspc node -p north
 super + Down
-	bspc node @/ -p south -r 0.5
+	bspc node -p south
 super + Left
-	bspc node @/ -p west -r 0.5
+	bspc node -p west
 super + Right
-	bspc node @/ -p east -r 0.5
+	bspc node -p east
 super + shift + Up
 	bspc node -s north
 super + shift + Down
