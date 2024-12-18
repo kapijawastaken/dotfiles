@@ -46,9 +46,6 @@ xfce4-clipman &
 # Cursor
 xsetroot -cursor_name left_ptr &
 
-# this is here to unbreak polybar
-bspc config right_padding 0
-
 # simplescreenrecorder
 simplescreenrecorder --start-hidden &
 
