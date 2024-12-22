@@ -49,16 +49,16 @@ super + space
 
 # volume up
 XF86AudioRaiseVolume
-	amixer -q set Master 5%+ unmute
+	pactl set-sink-volume @DEFAULT_SINK@ +5%	
 
 # volume down
 XF86AudioLowerVolume
-	amixer -q set Master 5%- unmute
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # mute
 XF86AudioMute
-	amixer -D pulse sset Master toggle-mute
-  
+	 pactl set-sink-mute @DEFAULT_SINK@ toggle
+ 
 # brightness up
 XF86MonBrightnessUp
 	xbacklight -inc 5
