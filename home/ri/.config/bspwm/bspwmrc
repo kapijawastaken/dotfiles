@@ -51,3 +51,10 @@ simplescreenrecorder --start-hidden &
 
 # hp systray
 hp-systray &
+
+# bluetooth
+blueman-applet &
+
+# audio
+pipewire &
+pa-applet &
