@@ -4,7 +4,7 @@ export SUDO_EDITOR=/usr/bin/vim
 export MANPAGER=/usr/bin/vim
 export EDITOR=/usr/bin/vim
 export ZSH="$HOME/.oh-my-zsh"
-export PF_INFO="ascii title os kernel de pkgs uptime"
+export PF_INFO="ascii title os kernel de shell pkgs uptime"
 export PF_COL1=1
 export PF_COL3=COL1
 
