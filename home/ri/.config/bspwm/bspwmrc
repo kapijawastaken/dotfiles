@@ -11,7 +11,7 @@ bspc config border_width	3
 bspc config window_gap		5
 
 bspc config split_ratio          0.5
-bspc config pointer_follows_focus true
+bspc config pointer_follows_focus false
 bspc config focus_follows_pointer true
 bspc config presel_feedback_color "#FFFFFF"
 # border
@@ -22,12 +22,6 @@ bspc config active_border_color         "#808080"
 # set display from arandr saved script
 sh ~/.screenlayout/monitor.sh &
 
-# bar
-~/.config/polybar/launch.sh &
-
-# notifications
-/usr/bin/dunst &
-
 # wallpaper
 ~/.fehbg &
 
@@ -35,7 +29,7 @@ sh ~/.screenlayout/monitor.sh &
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
 
 # picom
-picom -b --config ~/.config/picom/picom.conf &
+picom -b -f --config ~/.config/picom/picom.conf &
 
 # Network Applet
 nm-applet --indicator &
@@ -49,12 +43,13 @@ xsetroot -cursor_name left_ptr &
 # simplescreenrecorder
 simplescreenrecorder --start-hidden &
 
-# hp systray
-hp-systray &
-
 # bluetooth
 blueman-applet &
 
 # audio
 pipewire &
 pa-applet &
+
+# bar
+~/.config/polybar/launch.sh &
+
