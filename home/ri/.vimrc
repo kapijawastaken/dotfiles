@@ -23,6 +23,9 @@ autocmd FileType nerdtree nmap <buffer> <Space> <CR>
 set encoding=UTF-8
 set autoindent expandtab tabstop=2 shiftwidth=2
 set clipboard+=unnamedplus
+set number
+set relativenumber
+set numberwidth=1
 
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'
