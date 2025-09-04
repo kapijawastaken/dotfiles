@@ -1,1 +1,89 @@
+# sakura
+super + Return
+  sakura
 
+# rofi
+super + d
+  rofi -show drun
+
+# logout 
+super + shift + e
+  pkill -KILL -u $USER
+
+# make sxhkd reload its configuration files:
+super + Escape
+  pkill -USR1 -x sxhkd
+
+# bspwm hotkeys
+super + Up
+  bspc node -p north
+super + Down
+  bspc node -p south
+super + Left
+  bspc node -p west
+super + Right
+  bspc node -p east
+super + shift + Up
+  bspc node -s north
+super + shift + Down
+  bspc node -s south
+super + shift + Left
+  bspc node -s west
+super + shift + Right
+  bspc node -s east
+
+# close and kill
+super + {_,shift + }q
+  bspc node -{c,k}
+
+# set the window state
+super + {f,t}
+  bspc node -t {fullscreen,tiled}
+
+# floating
+super + shift + space
+  bspc node -t floating
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'
+
+# cancel the preselection for the focused node
+super + space
+  bspc node -p cancel
+
+# volume up
+XF86AudioRaiseVolume
+  pactl set-sink-volume @DEFAULT_SINK@ +5%	
+
+# volume down
+XF86AudioLowerVolume
+  pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# mute
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+ 
+# brightness up
+XF86MonBrightnessUp
+  brightnessctl set +10%
+
+# brightness down
+XF86MonBrightnessDown
+  brightnessctl set 10%-
+
+# screenshot
+Print
+  xfce4-screenshooter
+
+# thunar
+super + e
+  thunar 
+
+# media keys
+XF86AudioPlay
+  playerctl play-pause
+XF86AudioPrev
+  playerctl previous
+XF86AudioNext
+  playerctl next
