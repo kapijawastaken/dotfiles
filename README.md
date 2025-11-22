@@ -1,2 +1,18 @@
 # dotfiles
-using the installer script is not recommended since it overwrites your current config
+
+## What's included:
+* Emacs
+* bspwm
+* polybar
+* btop
+* picom
+* sakura
+* sxhkd
+* rofi
+
+## Usage:
+```
+git clone https://github.com/kapijawastaken/dotfiles
+cd dotfiles
+cp * ../
+```
