@@ -4,7 +4,6 @@
 * Emacs
 * bspwm
 * polybar
-* btop
 * picom
 * sakura
 * sxhkd
