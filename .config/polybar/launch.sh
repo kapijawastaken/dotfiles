@@ -14,4 +14,3 @@ killall -q polybar
 # Launch Polybar
 polybar top -c ~/.config/polybar/config.ini &
 
-

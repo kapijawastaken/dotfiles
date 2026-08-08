@@ -3,15 +3,26 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # keeb layout
-setxkbmap -model acer_laptop -layout de -variant nodeadkeys -option ctrl:nocaps
+setxkbmap -model acer_laptop -layout de -variant nodeadkeys -option ctrl:nocaps compose:lctrl
 
 # disable touchpad
 xinput disable "ELAN0504:01 04F3:3091 Touchpad"
 
 # polkit
-/usr/libexec/polkit-gnome-authentication-agent-1 &
+#/usr/libexec/polkit-gnome-authentication-agent-1 &
 
-bspc monitor -d " 1 " " 2 " " 3 " " 4 " " 5 " " 6 " " 7 " " 8 " " 9 " " 10 "
+# Get internal monitor (eDP)
+INTERNAL=$(xrandr | awk '/ connected/ {print $1}' | grep -E '^eDP')
+
+# Get external monitor (first connected that isn't eDP)
+EXTERNAL=$(xrandr | awk '/ connected/ {print $1}' | grep -vE '^eDP' | head -n1)
+
+# Assign desktops
+bspc monitor "$INTERNAL" -d " 1 " " 2 " " 3 " " 4 " " 5 "
+
+if [ -n "$EXTERNAL" ]; then
+    bspc monitor "$EXTERNAL" -d " 6 " " 7 " " 8 " " 9 " " 10 "
+fi
 
 bspc config border_width 3
 bspc config window_gap   5
@@ -37,21 +48,16 @@ dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
 # Network Applet
 nm-applet --indicator &
 
-# xfce4-clipman
-xfce4-clipman &
+# pipewire
+#pipewire &
+#pipewire-pulse &
+#wireplumber &
 
 # Cursor
 xsetroot -cursor_name left_ptr &
 
 # simplescreenrecorder
 simplescreenrecorder --start-hidden &
-
-# bluetooth
-blueman-applet &
-
-# audio
-pipewire &
-pasystray &
 
 # bar
 ~/.config/polybar/launch.sh &
@@ -60,17 +66,10 @@ pasystray &
 ~/.config/bspwm/maxvolume.sh &
 
 # tablet
-otd-daemon &
+~/.config/bspwm/tablet.sh
 
 # picom
 picom -b -f --config ~/.config/picom/picom.conf &
 
-# wii u rich presence
-LD_LIBRARY_PATH="~/Applications/WiiURichPresence" ~/Applications/WiiURichPresence/WiiURichPresence
-
-# snixembed (makes some icons work with polybar)
-~/Applications/snixembed/snixembed &
-
-# nicotine+
-nicotine
-
+# emacs
+emacs --daemon

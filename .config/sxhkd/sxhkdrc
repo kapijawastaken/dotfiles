@@ -1,6 +1,6 @@
-# sakura
+# emacs
 super + Return
-  sakura
+  emacsclient -c
 
 # rofi
 super + d
@@ -54,15 +54,15 @@ super + space
 
 # volume up
 XF86AudioRaiseVolume
-  pactl set-sink-volume @DEFAULT_SINK@ +5%	
+  amixer -D default set Master 10%+	
 
 # volume down
 XF86AudioLowerVolume
-  pactl set-sink-volume @DEFAULT_SINK@ -5%
+  amixer -D default set Master 10%-
 
 # mute
 XF86AudioMute
-  pactl set-sink-mute @DEFAULT_SINK@ toggle
+  amixer -D default set Master toggle
  
 # brightness up
 XF86MonBrightnessUp
@@ -76,14 +76,16 @@ XF86MonBrightnessDown
 Print
   xfce4-screenshooter
 
-# thunar
+# pcmanfm-qt
 super + e
-  thunar 
+  pcmanfm-qt
 
 # media keys
 XF86AudioPlay
-  playerctl play-pause
+  emacsclient -e "(emms-pause)"
+
 XF86AudioPrev
-  playerctl previous
+  emacsclient -e "(emms-previous)"
+
 XF86AudioNext
-  playerctl next
+  emacsclient -e "(emms-next)"
