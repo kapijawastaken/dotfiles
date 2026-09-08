@@ -1,0 +1,50 @@
+# mbsyncrc based on
+# http://www.ict4g.net/adolfo/notes/2014/12/27/EmacsIMAP.html
+
+# ACCOUNT INFORMATION
+IMAPAccount gabriell-disroot
+# Address to connect to
+Host disroot.org
+User gabriellsimic@disroot.org
+# Create a plain text file that contains your password. Name it mbsyncpass-acc1. 
+# Then, gpg encrypt it by running: gpg2 -c mbsyncpass-acc1
+# Then delete the plain text file, leaving only mbsyncpass-acc1.gpg.
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.config/mu4e/mbsyncpass-acc1.gpg"
+#PassCmd "cat ~/.config/mu4e/mbsyncpass-acc1"
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# THEN WE SPECIFY THE LOCAL AND REMOTE STORAGE
+# - THE REMOTE STORAGE IS WHERE WE GET THE MAIL FROM (E.G., THE
+#   SPECIFICATION OF AN IMAP ACCOUNT)
+# - THE LOCAL STORAGE IS WHERE WE STORE THE EMAIL ON OUR COMPUTER
+
+# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+IMAPStore gabriell-disroot-remote
+Account gabriell-disroot
+
+# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p ~/Mail/gabriell-disroot)
+MaildirStore gabriell-disroot-local
+Path ~/Mail/gabriell-disroot/
+Inbox ~/Mail/gabriell-disroot/INBOX
+# REQUIRED ONLY IF YOU WANT TO DOWNLOAD ALL SUBFOLDERS; SYNCING SLOWS DOWN
+# SubFolders Verbatim
+
+# CONNECTIONS SPECIFY LINKS BETWEEN REMOTE AND LOCAL FOLDERS
+#
+# CONNECTIONS ARE SPECIFIED USING PATTERNS, WHICH MATCH REMOTE MAIL
+# FOLDERS. SOME COMMONLY USED PATTERS INCLUDE:
+#
+# 1 "*" TO MATCH EVERYTHING
+# 2 "!DIR" TO EXCLUDE "DIR"
+# 3 "DIR" TO MATCH DIR
+
+Channel gabriell-disroot
+Far :gabriell-disroot-remote:
+Near :gabriell-disroot-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
